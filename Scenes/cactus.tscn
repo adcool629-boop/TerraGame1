@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://djk288jav4w8c"]
+
+[ext_resource type="Texture2D" uid="uid://d13w2sfi4wcur" path="res://sprites/Sprites [Enemies]/Cactus/Cactus_1/Cactus_1.png" id="1_krne5"]
+[ext_resource type="PackedScene" uid="uid://cwptxmfcaas4p" path="res://Scenes/Killzone.tscn" id="2_jeihb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjejd"]
+atlas = ExtResource("1_krne5")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj16u"]
+atlas = ExtResource("1_krne5")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0akkt"]
+atlas = ExtResource("1_krne5")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6vup"]
+atlas = ExtResource("1_krne5")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xsmg"]
+atlas = ExtResource("1_krne5")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_756jn"]
+atlas = ExtResource("1_krne5")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joo8e"]
+atlas = ExtResource("1_krne5")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v675n"]
+atlas = ExtResource("1_krne5")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u61ts"]
+atlas = ExtResource("1_krne5")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl832"]
+atlas = ExtResource("1_krne5")
+region = Rect2(240, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1bk7"]
+atlas = ExtResource("1_krne5")
+region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1rta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjejd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj16u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0akkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6vup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xsmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_756jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joo8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v675n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u61ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl832")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1bk7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iagy"]
+size = Vector2(12, 12)
+
+[node name="Cactus" type="Node2D" unique_id=420705100]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=983203801]
+sprite_frames = SubResource("SpriteFrames_t1rta")
+
+[node name="Killzone" parent="." unique_id=420423835 instance=ExtResource("2_jeihb")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=749626436]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_1iagy")

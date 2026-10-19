@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dnp65c2rc6y2i"]
+
+[ext_resource type="Texture2D" uid="uid://dcyokglw3us71" path="res://sprites/Enemy Characters Pack SpriteSheet[20x20][FREE] - RottingPixels/enemies-spritesheet.png" id="1_jckqh"]
+[ext_resource type="Script" uid="uid://noqgbv2vco0i" path="res://Scripts/bat.gd" id="1_wt6c1"]
+[ext_resource type="PackedScene" uid="uid://cwptxmfcaas4p" path="res://Scenes/Killzone.tscn" id="2_wt6c1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50dnf"]
+atlas = ExtResource("1_jckqh")
+region = Rect2(0, 100, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqh3e"]
+atlas = ExtResource("1_jckqh")
+region = Rect2(20, 100, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1rta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50dnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqh3e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1rta"]
+radius = 7.0
+
+[node name="Bat" type="Node2D" unique_id=421628196]
+script = ExtResource("1_wt6c1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1495411605]
+sprite_frames = SubResource("SpriteFrames_t1rta")
+frame_progress = 0.3085757
+
+[node name="Killzone" parent="." unique_id=420423835 instance=ExtResource("2_wt6c1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1675035008]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_t1rta")
+
+[node name="FlipTimer" type="Timer" parent="." unique_id=1561108443]
+
+[connection signal="timeout" from="FlipTimer" to="." method="_on_flip_timer_timeout"]

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://netsu3np5nag"]
+
+[ext_resource type="Texture2D" uid="uid://gl60hkxjessh" path="res://sprites/Sprites [Enemies]/Mushroom/Mushroom_1/Mushroom_1.png" id="1_gws8u"]
+[ext_resource type="PackedScene" uid="uid://cwptxmfcaas4p" path="res://Scenes/Killzone.tscn" id="2_ttvuq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqaf0"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glj2u"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmtq2"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ayup"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4y0v"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okwxc"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0whu"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byxod"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt34l"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1y1k"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqx8f"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(240, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f23lh"]
+atlas = ExtResource("1_gws8u")
+region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t1rta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqaf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glj2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmtq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ayup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4y0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okwxc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0whu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byxod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt34l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1y1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqx8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f23lh")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1rta"]
+radius = 7.0
+
+[node name="RedMushroom" type="Node2D" unique_id=1520867115]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=828199546]
+sprite_frames = SubResource("SpriteFrames_t1rta")
+
+[node name="Killzone" parent="." unique_id=420423835 instance=ExtResource("2_ttvuq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1545086641]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_t1rta")

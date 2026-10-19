@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cmoubxgmtkw4b"]
+
+[ext_resource type="Script" uid="uid://brxlmcvu6b7wf" path="res://Scripts/bee.gd" id="1_80wg3"]
+[ext_resource type="Texture2D" uid="uid://3j2rfen74bx8" path="res://sprites/Sprites [Enemies]/Bee/Bee.png" id="1_iiy0m"]
+[ext_resource type="PackedScene" uid="uid://cwptxmfcaas4p" path="res://Scenes/Killzone.tscn" id="2_80wg3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxbm7"]
+atlas = ExtResource("1_iiy0m")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2af24"]
+atlas = ExtResource("1_iiy0m")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34vqf"]
+atlas = ExtResource("1_iiy0m")
+region = Rect2(48, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcj77"]
+atlas = ExtResource("1_iiy0m")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhhoy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxbm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2af24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34vqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcj77")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1rta"]
+radius = 6.0
+
+[node name="Bee" type="Node2D" unique_id=1520867115]
+script = ExtResource("1_80wg3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=828199546]
+sprite_frames = SubResource("SpriteFrames_rhhoy")
+autoplay = "default"
+
+[node name="Killzone" parent="." unique_id=420423835 instance=ExtResource("2_80wg3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1545086641]
+shape = SubResource("CircleShape2D_t1rta")
+
+[node name="FlipTimer" type="Timer" parent="." unique_id=1205089481]
+
+[connection signal="timeout" from="FlipTimer" to="." method="_on_flip_timer_timeout"]

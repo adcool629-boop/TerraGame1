@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b7wdd1gul2cy7"]
+
+[ext_resource type="Texture2D" uid="uid://cb7167v3dofln" path="res://sprites/coin.png" id="1_v7428"]
+[ext_resource type="PackedScene" uid="uid://cwptxmfcaas4p" path="res://Scenes/Killzone.tscn" id="2_54m3m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t1rta"]
+radius = 4.0
+
+[node name="DeathCoin" type="Node2D" unique_id=30782495]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1249373594]
+texture = ExtResource("1_v7428")
+region_enabled = true
+region_rect = Rect2(0, 0, 15.60537, 16)
+
+[node name="Killzone" parent="." unique_id=420423835 instance=ExtResource("2_54m3m")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=753018002]
+shape = SubResource("CircleShape2D_t1rta")

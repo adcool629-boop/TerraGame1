@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://s8jhd0otgglu"]
+
+[ext_resource type="Script" uid="uid://bd50jc1uhr8jr" path="res://Scripts/death_counter.gd" id="1_1s65g"]
+
+[node name="DeathCounter" type="Node" unique_id=704131964]
+script = ExtResource("1_1s65g")

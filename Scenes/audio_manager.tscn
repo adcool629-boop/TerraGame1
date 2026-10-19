@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c7kmrrmwsaml1"]
+
+[ext_resource type="AudioStream" uid="uid://btbyv43rcsl2v" path="res://sounds/2026-10-15 21-21-52.mp3" id="1_sm2tf"]
+
+[node name="AudioManager" type="Node" unique_id=2102351061]
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=246198610]
+stream = ExtResource("1_sm2tf")
+autoplay = true
