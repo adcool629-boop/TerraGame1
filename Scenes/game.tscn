@@ -3620,7 +3620,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-10878585, 0, 11, -10944121, 0, 11, -11009657, 0, 11, -11075193, 0, 11, -11140729, 0, 11, -11206265, 0, 11, -11271801, 0, 11, -11337337, 0, 11, -11402873, 0, 11, -11468409, 0, 11, -11533945, 0, 11, -11599481, 0, 11, -11665017, 0, 11, -11730553, 0, 11, -11796089, 0, 11)
 
 [node name="Player" parent="." unique_id=1174957202 instance=ExtResource("1_ebmjs")]
-position = Vector2(6036, -2520)
+position = Vector2(1, -4)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1835471074]
 position = Vector2(-31, -49)
